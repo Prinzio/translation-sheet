@@ -57,11 +57,11 @@ class TranslationsSheet extends AbstractSheet
             // Header row
             $this->spreadsheet->api()->frozenRowRequest($this->getId()),
             $this->spreadsheet->api()->styleArea($this->emptyCoordinates()->headerRange(), $this->styles()->translationsHeader()),
-            $this->spreadsheet->api()->protectRangeRequest($this->emptyCoordinates()->headerRange(), 'HEADER.'),
+            //$this->spreadsheet->api()->protectRangeRequest($this->emptyCoordinates()->headerRange(), 'HEADER.'),
 
             // Full key column
             $this->spreadsheet->api()->frozenColumnRequest($this->getId()),
-            $this->spreadsheet->api()->protectRangeRequest($fullkeyRange, 'FULL_KEY'),
+            //$this->spreadsheet->api()->protectRangeRequest($fullkeyRange, 'FULL_KEY'),
             $this->spreadsheet->api()->fixedColumnWidthRequest($this->getId(), 0, 1, 450),
             $this->spreadsheet->api()->styleArea($fullkeyRange, $this->styles()->fullKeyColumn()),
 
@@ -69,7 +69,7 @@ class TranslationsSheet extends AbstractSheet
             $this->spreadsheet->api()->styleArea($translationsRange, $this->styles()->translationsColumns()),
 
             // Meta columns
-            $this->spreadsheet->api()->protectRangeRequest($metaRange, 'META'),
+            //$this->spreadsheet->api()->protectRangeRequest($metaRange, 'META'),
             $this->spreadsheet->api()->styleArea($metaRange, $this->styles()->metaColumns()),
             $this->spreadsheet->api()->fixedColumnWidthRequest($this->getId(), $this->coordinates()->namespaceColumnIndex(), $this->coordinates()->namespaceColumnIndex() + 1, 145),
             $this->spreadsheet->api()->fixedColumnWidthRequest($this->getId(), $this->coordinates()->groupColumnIndex(), $this->coordinates()->groupColumnIndex() + 1, 80),
